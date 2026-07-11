@@ -1,10 +1,7 @@
-# Job Application Assistant for [YOUR_NAME]
-
-<!-- SETUP: This file is populated by running /setup -->
-<!-- After running /setup, all [PLACEHOLDER] tokens will be replaced with your actual information -->
+# Job Application Assistant for Vasudha Sathyapriyan
 
 ## Role
-This repo is a job application workspace. Claude acts as a career advisor and application assistant for [YOUR_NAME], helping with:
+This repo is a job application workspace. Claude acts as a career advisor and application assistant for Vasudha Sathyapriyan, helping with:
 1. **Job fit evaluation** - Assess job postings against your profile (skills, experience, behavioral traits)
 2. **CV tailoring** - Adapt existing CV templates (LaTeX/moderncv) to target specific roles
 3. **Cover letter writing** - Draft targeted cover letters using existing templates (LaTeX)
@@ -13,68 +10,68 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ## Candidate Profile
 
-<!-- This section is auto-populated by /setup. You can also fill it in manually. -->
-
 ### Identity
-- **Name:** [YOUR_NAME]
-- **Location:** [YOUR_CITY], [YOUR_COUNTRY] ([YOUR_COMMUTE_CONSTRAINTS])
-- **Languages:** [YOUR_LANGUAGES]
-- **Status:** [YOUR_EMPLOYMENT_STATUS]
-- **LinkedIn headline:** "[YOUR_LINKEDIN_HEADLINE]"
+- **Name:** Vasudha Sathyapriyan
+- **Location:** Copenhagen, Denmark (open to relocation: Denmark, India, Belgium, Netherlands, Finland, Sweden; prefers hybrid or partly-hybrid/onsite roles over fully remote)
+- **Languages:** English, Tamil, Kannada, Hindi (native/bilingual); no Danish proficiency
+- **Status:** Employed full-time as DSP Engineer at Demant A/S (Oticon); PhD thesis in final review, defense expected October 2026
+- **LinkedIn headline:** "DSP Engineer at Oticon | PhD Fellow at Aalborg University"
 
 ### Education
-<!-- List your degrees, most recent first -->
-- **[DEGREE_LEVEL] in [FIELD]** ([YEAR_START]-[YEAR_END]) - [INSTITUTION]
-  - Thesis: "[THESIS_TITLE]"
-  - Topics: [KEY_TOPICS]
+- **PhD in Electrical and Electronics Engineering (Industrial)** (2021-Present) - Aalborg University (enrolled, Marie Skłodowska-Curie Fellowship), based full-time at Demant A/S (Oticon), Smørum, Denmark
+  - Thesis: "Speech enhancement in hearing aid applications using remote microphones" (final review, defense expected October 2026)
+  - Topics: adaptive beamforming, multi-microphone noise reduction, DNN-based mask estimation, wireless acoustic sensor networks. Visiting stints at Aalborg University campus and Imperial College London.
+- **MSc in Electrical and Electronics Engineering (Cum Laude)** (2018-2020) - Delft University of Technology, Delft, Netherlands
+  - Thesis: "Noise reduction in hearing aids with binaural cue (ILD/ITD) preservation"
+- **B.E. in Electrical and Electronics Engineering** (2013-2017) - SSN College of Engineering, Chennai, India
 
 ### Professional Experience
-<!-- List your roles, most recent first -->
-- **[JOB_TITLE]** ([START_DATE] - [END_DATE]) - **[COMPANY]** ([LOCATION])
-  - [KEY_RESPONSIBILITY_1]
-  - [KEY_RESPONSIBILITY_2]
-  - [KEY_ACHIEVEMENT]
+- **DSP Engineer** (September 2024 - Present) - **Demant A/S (Oticon)** (Smørum, Denmark)
+  - Develop and optimize DSP algorithms for hearing instruments across the full product lifecycle
+  - Research and implement adaptive beamforming and multi-microphone noise reduction; train/evaluate DNNs for mask estimation (PyTorch)
+  - Verify algorithm performance through acoustic measurements, real-time testing, and clinical data analysis with audiologists
+- **Graduate Research Intern** (July 2019 - November 2019) - **Bosch Security and Safety Systems** (Eindhoven, Netherlands)
+  - Improved beamforming algorithms for microphone arrays in conference room systems
+- **Software Engineer** (June 2017 - May 2018) - **Visteon Corporation** (Chennai, India)
+  - Developed embedded software for automotive instrument clusters using Agile methodology
 
 ### Technical Skills
-- **Primary:** [YOUR_PRIMARY_SKILLS]
-- **Secondary:** [YOUR_SECONDARY_SKILLS]
-- **Domain:** [YOUR_DOMAIN_EXPERTISE]
-- **Software:** [YOUR_TOOLS_AND_SOFTWARE]
+- **Primary:** Statistical signal processing, adaptive beamforming, multi-microphone noise reduction, speech enhancement, detection/estimation theory, constrained optimization (Lagrangian methods)
+- **Secondary:** Deep learning for audio (PyTorch, DNN mask estimation), embedded software (C++)
+- **Domain:** Hearing aid / assistive hearing technology, audio and speech signal processing, spatial audio
+- **Software:** Python, MATLAB, PyTorch, C++, Git, Linux, Agile
 
 ### Certifications
-<!-- List relevant certifications with dates -->
-- **[CERTIFICATION_NAME]** - [HOURS]h - completed [DATE]
+None on file.
 
 ### Publications
-<!-- List peer-reviewed publications, if any -->
-- [AUTHOR_LIST] ([YEAR]). [TITLE]. [JOURNAL].
+- V. Sathyapriyan et al. (2025). "Head-Steered Channel Selection for Hearing Aid Applications Using Remote Microphones." IEEE Access.
+- V. Sathyapriyan et al. (2025). "Binary Estimator Selection Methods for Hearing Aids With a Remote Microphone." IEEE Access.
+- V. Sathyapriyan et al. (2024). "Speech Enhancement in Hearing Aids Using Target Speech Presence Estimation Based on a Delayed Remote Microphone Signal." IEEE ICASSP.
+- V. Sathyapriyan et al. (2023). "Speech Enhancement using Binary Estimator Selection Applied to Hearing Aids with a Remote Microphone." IEEE ICFSP.
+- V. Sathyapriyan et al. (2022). "A Linear MMSE Filter Using Delayed Remote Microphone Signals for Speech Enhancement in Hearing Aid Applications." IEEE IWAENC.
+- V. Sathyapriyan, M. Çaliş, R. C. Hendriks (2021). "Binaural beam-forming with dominant spatial cue preservation for hearing aids." EUSIPCO.
+
+Plus 2 patents (see `01-candidate-profile.md` for full details).
 
 ### Awards
-<!-- List relevant awards, hackathons, competitions -->
-- [AWARD_NAME] - [EVENT] ([YEAR])
+None on file.
 
 ### Behavioral Profile
-<!-- Your behavioral assessment results (PI, DISC, Myers-Briggs, or self-assessment) -->
-- **[TRAIT_1]** - [DESCRIPTION]
-- **[TRAIT_2]** - [DESCRIPTION]
-- **Strengths:** [YOUR_STRENGTHS]
-- **Growth areas:** [YOUR_GROWTH_AREAS]
-- **Thrives in:** [YOUR_IDEAL_ENVIRONMENT]
+Not yet assessed - see `.claude/skills/job-application-assistant/02-behavioral-profile.md` (left blank; populate manually or via a future `/setup --section behavioral` run).
 
 ### What Excites You
-<!-- What motivates you professionally -->
-- [PASSION_1]
-- [PASSION_2]
+- Taking algorithms from research/derivation to deployed, real-time products
+- Framing messy real-world problems as estimation, detection, or constrained-optimization tasks and solving them rigorously
 
 ### Target Sectors
-<!-- Industries and companies you're targeting -->
-- [SECTOR_1]: [EXAMPLE_COMPANIES]
-- [SECTOR_2]: [EXAMPLE_COMPANIES]
+- Hearing aid / audio technology: Demant/Oticon, GN/Jabra, Sonova/Phonak, WSAudiology, Qualcomm (Speech & Audio Research), Goodix
+- Broader audio/speech ML and signal processing: TrackMan (sensor/radar modelling), and adjacent sensor-fusion or acoustic ML roles
 
 ### Deal-breakers
-<!-- Hard constraints on job search -->
-- [DEALBREAKER_1]
-- [DEALBREAKER_2]
+- Fully remote-only roles (prefers hybrid or partly-hybrid/onsite)
+- Roles requiring fluent Danish
+- Relocation outside the approved list: Denmark, India, Belgium, Netherlands, Finland, Sweden
 
 ## Repo Structure
 - `cv/` - LaTeX CV variants (moderncv template, banking style)

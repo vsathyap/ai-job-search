@@ -1,5 +1,18 @@
 # CV Templates and Tailoring Guide
 
+<!-- BEGIN ACTIVE-TEMPLATE (managed by /add-template - do not edit by hand) -->
+> **Active template override: `sectioned-grid`**
+>
+> A custom template is active. Where this block conflicts with the stock guidance below, this block wins. Structural advice below (tailoring, page-budget, cutting rules) still applies.
+>
+> - **Template skeleton:** `templates/cv/sectioned-grid/template.tex` - use this as the structural reference instead of the stock moderncv template
+> - **Manifest:** `templates/cv/sectioned-grid/TEMPLATE.md` - read this for style rules and known pitfalls before drafting (in particular: never write `\item [text]` with the bracket immediately after `\item`)
+> - **Compile with:** `xelatex` (not `lualatex` as named in the stock guidance below)
+> - **Fonts:** Lato, bundled in `templates/cv/sectioned-grid/fonts/lato/` - copy this folder alongside the compiled `.tex` file, or adjust the `Path` option to point back at the template folder
+> - **Page limit:** exactly 2 page(s)
+> - **Output file:** unchanged (`cv/main_<company>.tex`); copy `fonts/lato/` into `cv/` (or reference it by relative path) so the compile can find the fonts
+<!-- END ACTIVE-TEMPLATE -->
+
 <!-- SETUP: Profile statements and section ordering are personalized by running /setup -->
 
 ## Template: LaTeX moderncv (Banking Style)
@@ -106,11 +119,11 @@ Write 5-7 lines that function as an "elevator pitch": a concise, compelling intr
 **Create 2-3 profile statement templates for your main role types:**
 
 <!-- SETUP: These are populated based on your background -->
-**For [YOUR_PRIMARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_1]
+**For DSP/product-engineering roles:** *[Used for: Goodix]*
+> Signal processing engineer completing a PhD in speech enhancement, working across classical DSP and deep learning: adaptive beamforming, multi-microphone noise reduction, and DNN-based mask estimation. Experienced taking algorithms from research to deployed, real-time products using Matlab, Python and PyTorch. 6 peer-reviewed publications and 2 patents.
 
-**For [YOUR_SECONDARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_2]
+**For research-forward / audio-ML roles:** *[Used for: Qualcomm Speech & Audio Researcher]*
+> Signal processing researcher completing a PhD in speech enhancement and audio processing. Strong foundation in statistical signal processing, adaptive filtering, spectral estimation, and optimization, with machine learning an increasing part of my work. Experienced in turning research into algorithms robust to realistic acoustic conditions and deployable for real-time applications in Python and MATLAB. 6 peer-reviewed publications and 2 patents in speech enhancement and spatial audio.
 
 ### Core Competencies / Skills Section (Best Practice)
 Reorder and emphasize based on the role. Use bold category labels.

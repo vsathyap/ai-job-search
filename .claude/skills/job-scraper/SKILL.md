@@ -157,6 +157,8 @@ If the run found many new jobs (roughly 8+), also suggest `/rank` - it batch-sco
 
 If the user decides to apply to any job, add a row to `job_search_tracker.csv`.
 
+If `tools/sync_tracker_excel.py` exists, run `python tools/sync_tracker_excel.py` after writing the row to refresh `job_search_tracker.xlsx`. Skip silently (no error to the user) if the script or `openpyxl` is missing - the Excel mirror is a convenience, not a dependency.
+
 ---
 
 ## Important Rules

@@ -8,6 +8,8 @@ __pycache__/
 *.pyo
 .venv/
 venv/
+uv/
+
 
 # Compiled documents
 *.pdf
@@ -53,6 +55,9 @@ cover_letters/cover_*.tex
 cover_letters/Cover_*.tex
 !cover_letters/cover_example.tex
 
+# template fonts
+templates\cv\sectioned-grid\
+
 # documents/ subfolder contents are personal — only README and folder structure are tracked
 documents/cv/**
 documents/linkedin/**
@@ -63,6 +68,7 @@ documents/applications/**
 
 # Personal job search tracking
 job_search_tracker.csv
+job_search_tracker.xlsx
 
 # Upskill reports (personal output)
 upskill/*.md

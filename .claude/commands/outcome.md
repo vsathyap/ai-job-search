@@ -89,6 +89,8 @@ Update rules: tick stage checkboxes as they are reached (add the date in parenth
 
 Update the matched row's `status` column (e.g. `applied` → `interview` → `offer` → `hired` / `rejected` / `no response` / `offer declined` / `withdrawn`) and append a short dated note to the `notes` column. Never restructure the CSV, reorder rows, or touch other rows.
 
+If `tools/sync_tracker_excel.py` exists, run `python tools/sync_tracker_excel.py` after writing the CSV to refresh `job_search_tracker.xlsx`. Skip silently (no error to the user) if the script or `openpyxl` is missing - the Excel mirror is a convenience, not a dependency.
+
 ---
 
 ## Step 5: Calibration Handoff

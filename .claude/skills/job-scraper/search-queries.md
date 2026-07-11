@@ -1,69 +1,75 @@
 # Search Queries for Job Scraper
 
-<!-- SETUP: Customize these queries based on your skills, target roles, and location -->
-
 ## Search Sites
 
-Primary (your market's job boards - scaffold one with `/add-portal`):
-- **[YOUR_JOB_BOARD]** - your market's largest general job board
-- **linkedin.com/jobs** - LinkedIn job listings (filter: [YOUR_COUNTRY] / [YOUR_CITY])
-- **[YOUR_INDUSTRY_JOB_BOARD]** - a niche/industry board for your field (optional)
-- **[YOUR_ADDITIONAL_JOB_BOARD]** - another major board for your market (optional)
+Primary (job portals with installed CLIs in `.agents/skills/`):
+- **jobindex.dk**, **jobnet.dk**, **jobbank** (Akademikernes Jobbank), **jobdanmark.dk** - Denmark
+- **linkedin.com/jobs** - global via `linkedin-search` CLI, filter by explicit location string (Denmark, India, Belgium, Netherlands, Finland, Sweden as relevant)
+- **freehire.dev** - multi-market tech aggregator via `freehire-search` CLI (region/country facets)
+
+India note: no dedicated India job-board CLI is installed yet. `linkedin-search` and `freehire-search` both work for Indian cities out of the box (e.g. `-l "Bengaluru, Karnataka, India"`). If coverage feels thin, run `/add-portal` to scaffold a dedicated CLI for Naukri.com, Indeed India, or Foundit (Monster India).
 
 Secondary (company career pages via Google):
-- Direct Google searches with `site:` filters for known target companies
+- Direct Google searches with `site:` filters for known target companies (see Priority 1 target companies below)
 
 ## Query Categories
 
-Queries are grouped by priority. Each query should be combined with your location terms (e.g. your city, region, or metro area) where the site supports it.
+Queries are grouped by priority. Each query should be combined with the relevant location terms below where the site supports it - use only the specific city/country relevant to a given search pass, not the full relocation list.
 
-### Priority 1: [YOUR_PRIMARY_ROLE_TYPE]
+### Priority 1: DSP / Signal Processing Engineering (audio & hearing tech)
 
-These match your strongest and most desired career direction.
-
-```
-site:[YOUR_JOB_BOARD] "[YOUR_PRIMARY_JOB_TITLE]" [YOUR_CITY]
-site:[YOUR_JOB_BOARD] "[YOUR_KEY_SKILL]" [YOUR_CITY]
-site:linkedin.com/jobs "[YOUR_PRIMARY_JOB_TITLE]" [YOUR_COUNTRY]
-```
-
-### Priority 2: [YOUR_DOMAIN_EXPERTISE]
-
-These match your domain expertise.
+Strongest and most desired career direction.
 
 ```
-site:[YOUR_JOB_BOARD] [YOUR_DOMAIN_KEYWORD_1] [YOUR_CITY] OR [YOUR_REGION]
-site:[YOUR_JOB_BOARD] [YOUR_DOMAIN_KEYWORD_2] [YOUR_COUNTRY]
-site:linkedin.com/jobs [YOUR_DOMAIN_KEYWORD_1] [YOUR_CITY] [YOUR_COUNTRY]
+site:jobindex.dk "DSP Engineer" OR "Signal Processing Engineer" Copenhagen
+"Algorithm Developer" "signal processing" Denmark
+"Speech Enhancement" OR "Audio Researcher" Denmark
+site:linkedin.com/jobs "DSP Engineer" Denmark
+site:linkedin.com/jobs "signal processing engineer" Bengaluru OR Bangalore India
+site:linkedin.com/jobs "DSP engineer" OR "audio algorithm" Belgium OR Netherlands OR Finland OR Sweden
 ```
 
-### Priority 3: [YOUR_ADJACENT_ROLE_TYPE]
+Target companies to monitor: Demant/Oticon, GN/Jabra, Sonova/Phonak, WSAudiology, Qualcomm (Speech & Audio Research), Goodix, TrackMan
 
-Adjacent roles you could pivot into.
+### Priority 2: Audio & Speech Machine Learning
 
-```
-site:[YOUR_JOB_BOARD] "[YOUR_ADJACENT_TITLE_1]" [YOUR_KEY_SKILL] [YOUR_CITY]
-site:[YOUR_JOB_BOARD] "[YOUR_ADJACENT_TITLE_2]" [YOUR_KEY_SKILL] [YOUR_CITY]
-```
-
-### Priority 4: Broader Technical / Consulting
-
-Wider net for general technical roles.
+Domain expertise: combining classical DSP with deep learning for audio.
 
 ```
-site:[YOUR_JOB_BOARD] [YOUR_KEY_SKILL] developer [YOUR_CITY]
-site:linkedin.com/jobs "[YOUR_KEY_SKILL] developer" [YOUR_CITY]
-site:[YOUR_JOB_BOARD] "technical consultant" [YOUR_DOMAIN] [YOUR_CITY]
+"adaptive beamforming" OR "multi-microphone noise reduction" Denmark OR India
+"speech enhancement" machine learning Denmark
+site:linkedin.com/jobs "audio machine learning" OR "acoustic ML" Denmark OR Bengaluru India
+"mask estimation" OR "spatial audio" research engineer
+```
+
+### Priority 3: Adjacent Signal Processing / Sensor Fusion
+
+Roles that transfer the estimation/detection/optimization skillset outside audio specifically.
+
+```
+"sensor fusion engineer" "signal processing" Denmark OR India
+"radar signal processing" OR "sonar signal processing" Denmark OR Netherlands OR Sweden
+"applied research scientist" acoustics OR "signal processing" Denmark OR India
+```
+
+### Priority 4: Broader ML / Research Engineering
+
+Wider net, general net-casting roles that still touch signal processing or applied ML.
+
+```
+"machine learning engineer" audio OR acoustic Denmark OR India OR Belgium OR Netherlands OR Finland OR Sweden
+"research engineer" "signal processing" OR "deep learning" Denmark OR India
+site:linkedin.com/jobs "algorithm engineer" Denmark OR India
 ```
 
 ## Location Filter
 
-When evaluating results, verify the job location is within reasonable commute distance from your home. Define acceptable areas:
-- [YOUR_CITY] and surrounding areas
-- [ACCEPTABLE_AREA_1]
-- [ACCEPTABLE_AREA_2]
-- [BORDERLINE_AREA] (borderline - ~X min by transit)
-- [TOO_FAR_AREA] (too far)
+Candidate is currently based in Copenhagen, Denmark, and is open to relocation. Define acceptable areas:
+- **Ideal:** Copenhagen / Smørum area, Denmark (current base, no relocation needed)
+- **Acceptable (relocation):** Bengaluru/Bangalore, India; other cities in Belgium, Netherlands, Finland, Sweden
+- **Too far:** Any country outside Denmark, India, Belgium, Netherlands, Finland, Sweden
+
+Work-mode preference: hybrid or partly-hybrid/onsite roles preferred over fully remote-only roles.
 
 ## Date Filter
 
@@ -73,3 +79,5 @@ Only include jobs posted within the last 14 days, or with an application deadlin
 
 If the user specifies a focus area, select queries from the matching category and also generate 2-3 custom queries for that focus. For example:
 - "/scrape [focus_area]" -> relevant category queries + custom focus-specific queries
+- "/scrape india" -> Priority 1-2 queries filtered to India locations only
+- "/scrape denmark" -> Priority 1-2 queries filtered to Denmark locations only

@@ -104,3 +104,9 @@ The cover letter is **not a CV repetition**. It should be forward-looking:
 - Default to the language of the job posting
 - Cover letters in the posting's language should feel natural, not translated
 - Slightly warmer, more personal tone may be acceptable in some languages
+
+## Patterns Observed in Past Applications
+<!-- Extracted from cover-letter documents in documents/applications/ (Qualcomm, TrackMan) during /setup -->
+- **Technical-question or problem-statement opener.** Openings lead with a concrete question or problem straight from her research rather than generic enthusiasm, e.g. "Most of my work comes down to one question: given noisy measurements from several sensors, which signal do you trust, and how sure can you be?" and "My PhD has been about pulling clean speech out of noisy, multi-microphone signals."
+- **One detailed worked example per letter**, not a list of several - a single algorithm/project (e.g. the remote-microphone sensor-selection method) walked through in enough depth to demonstrate how she thinks, rather than name-dropping many.
+- **Location/relocation stated briefly near the close.** E.g. "I am based in Copenhagen and can work on-site in Hørsholm" or "I am based in Denmark and open to relocating for this role." Keep this to the specific city/country relevant to that posting, not the full list of countries she's open to.

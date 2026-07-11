@@ -118,6 +118,15 @@ The font wrapper is mandatory — if you just move `\begin{itemize}` outside `\l
 | `\closing{text}` | Closing line |
 | `\signature{name}` | Printed name below signature |
 
+## Opening Patterns Observed
+<!-- Extracted from documents/applications/ during /setup - reuse the structure, not the literal wording -->
+
+**Technical-question opener** *[Used for: Qualcomm Algorithm Developer]*
+> Most of my work comes down to one question: given noisy measurements from several sensors, which signal do you trust, and how sure can you be? My PhD has been answering that for multi-microphone speech enhancement, and it is the same question your team is interested in.
+
+**Direct problem-statement opener** *[Used for: Qualcomm Speech & Audio Researcher]*
+> My PhD has been about pulling clean speech out of noisy, multi-microphone signals: the estimation, spatial filtering, and statistical modelling behind speech enhancement. That work sits in the middle of what this role covers.
+
 ## Tailoring Guidelines
 
 ### Salutation

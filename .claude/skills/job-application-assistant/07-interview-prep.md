@@ -35,6 +35,59 @@ Keep answers to 1-2 minutes. Be specific. End with what you learned or would do 
 
 <!-- Add more STAR examples as needed. Aim for 4-6 covering different competencies. -->
 
+## STAR Candidates (Complete Manually)
+<!-- Extracted from CV bullets and application materials during /setup. Fill in S/T/A/R details before using in an interview. -->
+
+### Remote-microphone selection via target-presence detection
+**Source:** CV / TrackMan interview answer - Demant PhD/DSP work
+**What happened:** Developed a statistical detection method to decide, using only a hearing aid's own noisy local microphones, which of several remote microphones actually contains the target speaker in real time.
+**Why it matters:** "Tell me about a modelling/algorithm project", detection-under-uncertainty and real-time constraint questions
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### Binaural beamforming as constrained optimization
+**Source:** CV / publications - MSc thesis and EUSIPCO paper
+**What happened:** Formulated noise reduction as a constrained-optimization problem that minimizes residual noise subject to preserving binaural spatial cues (ILD/ITD), solved via Lagrangian methods.
+**Why it matters:** Optimization-methodology questions, "walk me through a technical formulation" questions
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### DNN-based mask estimation benchmarked against classical methods
+**Source:** CV - Demant DSP Engineer role
+**What happened:** Trained and evaluated DNNs for mask estimation in single-channel post-filtering (PyTorch), benchmarked against classical and state-of-the-art methods.
+**Why it matters:** ML/deep-learning competency questions, "how do you validate a model against a baseline"
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### Cross-functional clinical validation
+**Source:** CV / LinkedIn - Demant DSP Engineer role
+**What happened:** Verified algorithm performance through acoustic measurements, simulations, real-time testing, and clinical data analysis, working directly with audiologists and cross-functional embedded/software teams.
+**Why it matters:** Collaboration and validation-process questions
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### International visiting-researcher stints
+**Source:** CV / LinkedIn - PhD program
+**What happened:** Completed two international visiting-PhD stints as part of the industrial PhD: Aalborg University campus and Imperial College London, each requiring ramping up on a new research environment quickly.
+**Why it matters:** Adaptability, working independently in a new environment, international collaboration questions
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
 ## Common Tough Questions
 
 ### "Why did you leave [previous company]?"

@@ -1,0 +1,164 @@
+%% Template: sectioned-grid
+%% Recreates a Word-designed CV layout: blue name/title header, thin rule,
+%% bold profile statement, and sections laid out as a left label column +
+%% (for dated sections) a date column + a wide content column.
+%% Compile with: xelatex (fontspec required for bundled Lato fonts)
+
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=0.85in,top=0.7in]{geometry}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+% ------------------------------------------------------------------
+% Fonts - Lato, bundled in fonts/lato/ (same family as the cover letter)
+% ------------------------------------------------------------------
+\setmainfont{Lato}[
+  Path = fonts/lato/,
+  Extension = .ttf,
+  UprightFont = *-Reg,
+  BoldFont = *-Bol,
+  ItalicFont = *-RegIta,
+  BoldItalicFont = *-BolIta,
+]
+\newfontfamily\latoblack{Lato}[
+  Path = fonts/lato/,
+  Extension = .ttf,
+  UprightFont = *-Bla,
+  ItalicFont = *-BlaIta,
+]
+
+% ------------------------------------------------------------------
+% Colors
+% ------------------------------------------------------------------
+\definecolor{cvblue}{RGB}{58,110,165}
+\definecolor{cvgray}{RGB}{80,80,80}
+
+\hypersetup{colorlinks=true, urlcolor=cvblue, linkcolor=cvblue}
+
+% ------------------------------------------------------------------
+% Header: name + title (left), contact block (right), thin rule below
+% ------------------------------------------------------------------
+% Usage: \cvheader{Name}{Job Title}{City, Country}{Phone}{Email}{Link1}{Link2}
+\newcommand{\cvheader}[7]{%
+  \noindent
+  \begin{minipage}[t]{0.62\linewidth}
+    {\latoblack\fontsize{28}{30}\selectfont\color{cvblue}#1}\\[3pt]
+    {\bfseries\large #2}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{0.36\linewidth}
+    \raggedleft\small
+    #3\\
+    #4 \quad\textbullet\quad \href{mailto:#5}{#5}\\
+    #6 \quad #7
+  \end{minipage}\par
+  \vspace{6pt}
+  {\color{cvblue}\rule{\linewidth}{1.1pt}}
+  \vspace{8pt}
+}
+
+% Profile statement - bold, gray, justified
+\newcommand{\cvprofile}[1]{{\bfseries\color{cvgray} #1}\par\vspace{10pt}}
+
+% ------------------------------------------------------------------
+% Section: left label column + wide content column.
+% Usage: \begin{cvsection}{SECTION LABEL} ... entries ... \end{cvsection}
+% ------------------------------------------------------------------
+\newenvironment{cvsection}[1]{%
+  \noindent
+  \begin{minipage}[t]{0.16\linewidth}
+    \bfseries\MakeUppercase{#1}
+  \end{minipage}%
+  \hspace{0.02\linewidth}%
+  \begin{minipage}[t]{0.80\linewidth}
+}{%
+  \end{minipage}\par\vspace{10pt}
+}
+
+% Dated entry inside a cvsection (Education / Experience).
+% Usage: \cvdate{date range}{title}{institution}{location}{description or itemize}
+\newcommand{\cvdate}[5]{%
+  \noindent
+  \begin{minipage}[t]{0.22\linewidth}
+    \small #1
+  \end{minipage}%
+  \hspace{0.02\linewidth}%
+  \begin{minipage}[t]{0.76\linewidth}
+    \textbf{#2}\hfill{\itshape #4}\\
+    {\itshape #3}\\[2pt]
+    #5
+  \end{minipage}\par\vspace{7pt}
+}
+
+% Undated block inside a cvsection (Publications, Skills, Languages, References).
+% Usage: \cvblock{content}
+\newcommand{\cvblock}[1]{\noindent#1\par\vspace{4pt}}
+
+% Compact bullet list for use inside \cvdate's description argument
+\newenvironment{cvitemize}{%
+  \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=0pt, partopsep=0pt, parsep=0pt, before=\vspace{-4pt}]
+}{%
+  \end{itemize}
+}
+
+\begin{document}
+
+\cvheader{[YOUR_NAME]}{[YOUR_TITLE]}{[YOUR_CITY], [YOUR_COUNTRY]}{[YOUR_PHONE]}{[YOUR_EMAIL]}{\href{[YOUR_LINKEDIN_URL]}{LinkedIn}}{\href{[YOUR_PORTFOLIO_URL]}{Portfolio}}
+
+\cvprofile{[3-4 line profile statement tailored to the target role. Focus on what makes you uniquely qualified.]}
+
+\begin{cvsection}{Education}
+\cvdate{[YYYY--YYYY]}{[Degree in Field]}{[Institution]}{[City, Country]}{[Brief description or key thesis topic.]}
+\cvdate{[YYYY--YYYY]}{[Degree in Field]}{[Institution]}{[City, Country]}{[Brief description or key thesis topic.]}
+\end{cvsection}
+
+\begin{cvsection}{Professional Experience}
+\cvdate{[YYYY--Present]}{[Job Title]}{[Company]}{[City, Country]}{%
+\begin{cvitemize}
+\item{}[Achievement or responsibility 1 - be specific, use numbers where possible]
+\item{}[Achievement or responsibility 2]
+\item{}[Achievement or responsibility 3]
+\end{cvitemize}}
+\cvdate{[YYYY--YYYY]}{[Job Title]}{[Company]}{[City, Country]}{%
+\begin{cvitemize}
+\item{}[Achievement or responsibility 1]
+\item{}[Achievement or responsibility 2]
+\end{cvitemize}}
+\end{cvsection}
+
+\begin{cvsection}{Publications \& Patents}
+\cvblock{\textbf{Journal Articles}
+\begin{cvitemize}
+\item{}[Author list] ([Year]). [Title]. [Journal].
+\end{cvitemize}}
+\cvblock{\textbf{Patents}
+\begin{cvitemize}
+\item{}[Author list]. [Title]. [Patent number] ([Year]).
+\end{cvitemize}}
+\end{cvsection}
+
+\begin{cvsection}{Technical \& Professional Skills}
+\cvblock{%
+\begin{cvitemize}
+\item \textbf{[Skill Category 1]}: [Specific skills, frameworks, tools.]
+\item \textbf{[Skill Category 2]}: [Specific skills, frameworks, tools.]
+\end{cvitemize}}
+\end{cvsection}
+
+\begin{cvsection}{Software Skills}
+\cvblock{[Tool 1] \textbullet\ [Tool 2] \textbullet\ [Tool 3] \textbullet\ [Tool 4]}
+\end{cvsection}
+
+\begin{cvsection}{Languages}
+\cvblock{[Language 1] \textbullet\ [Language 2] \textbullet\ [Language 3]}
+\end{cvsection}
+
+\begin{cvsection}{References}
+\cvblock{Available upon request.}
+\end{cvsection}
+
+\end{document}
